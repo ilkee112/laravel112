@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Pgcontroller;
+use App\Http\Controllers\Postcontroller;
 
 /*
 |--------------------------------------------------------------------------
@@ -26,6 +27,10 @@ Route::get('/hello', function () {
     return view('hello', ['name' => 'Ilzeeeeeeeeeettttttpoopopopjkjkjlllllkjkjt']);
 });
 
-Route::get('/post', 'UserController@index')->name('users.index');
+//Route::get('/post', 'UserController@index')->name('users.index');
 
-Route::get('/post', [Pgcontroller::class, 'index']);
+//Route::get('/post', [Pgcontroller::class, 'index']);
+
+Route::get('/posts', [Postcontroller::class, 'index']);
+Route::get('/posts/create', [Postcontroller::class, 'create']);
+
