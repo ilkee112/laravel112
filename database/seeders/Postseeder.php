@@ -2,20 +2,20 @@
 
 namespace Database\Seeders;
 
-use Illuminate\Database\Console\Seeds\WithoutModelEvents;
+
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
-use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Str;
+use app\Models\Post;
 
-class DatabaseSeeder extends Seeder
+class Postseeder extends Seeder
 {
     /**
      * Seed the application's database.
      *
      * @return void
      */
-    public function run(): void
+    public function run() : void
     {
         // \App\Models\User::factory(10)->create();
 
@@ -23,9 +23,11 @@ class DatabaseSeeder extends Seeder
         //     'name' => 'Test User',
         //     'email' => 'test@example.com',
         // ]);
-$this->call ({
 
-    Postseeder::class,
-});
+      //  DB::table('posts')->insert([
+            //'title' => Str::random(10),
+            //'body' => Str::random(10),
+           Post::factory()->create();
+        
     }
 }
